@@ -10,7 +10,7 @@ package algorithm.dp;
 public class Leetcode123 {
     public static void main(String[] args) {
         Leetcode123 A = new Leetcode123();
-        int[] nums={7,6,4,3,1};
+        int[] nums={3,3,5,0,0,3,1,4};
         System.out.println(A.maxProfit(nums));
     }
     public int maxProfit(int[] prices) {
