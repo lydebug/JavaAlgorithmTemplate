@@ -1,4 +1,4 @@
-package algorithm.dp;
+package algorithm.dp.stock;
 
 /**
  * 买卖股票的最佳时机 IV

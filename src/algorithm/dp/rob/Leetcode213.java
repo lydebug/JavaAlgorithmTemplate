@@ -1,4 +1,4 @@
-package algorithm.dp;
+package algorithm.dp.rob;
 
 /**
  * @Author: liyang27

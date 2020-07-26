@@ -1,11 +1,11 @@
-package algorithm.dp;
+package algorithm.dp.bag;
 
 import java.util.Arrays;
 
 /**
  * @Author: liyang27
  * @Date: 2020/7/20 17:43
- * @Description:
+ * @Description:零钱兑换
  */
 public class Leetcode322 {
     public int coinChange(int[] coins, int amount) {

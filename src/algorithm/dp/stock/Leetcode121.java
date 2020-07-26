@@ -1,4 +1,4 @@
-package algorithm.dp;
+package algorithm.dp.stock;
 
 /**
  * @Author: liyang27
