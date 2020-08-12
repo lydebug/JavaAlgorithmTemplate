@@ -8,26 +8,28 @@ import java.util.Set;
 /**
  * @Author: liyang27
  * @Date: 2020/7/20 18:43
- * @Description:  全排列
+ * @Description: 全排列
  */
 public class Leetcode46 {
     List<List<Integer>> res = new LinkedList<>();
     Set<Integer> set = new HashSet<>();
+
     public List<List<Integer>> permute(int[] nums) {
-        backtrack(nums,new LinkedList<>());
+        backtrack(nums, new LinkedList<>());
         return res;
     }
-    public void backtrack(int[] nums,List<Integer> list){
-        if(list.size()==nums.length){
+
+    public void backtrack(int[] nums, List<Integer> list) {
+        if (list.size() == nums.length) {
             List<Integer> ans = new LinkedList<>(list);
             res.add(ans);
             return;
         }
-        for(int i:nums){
-            if(!set.contains(i)){
+        for (int i : nums) {
+            if (!set.contains(i)) {
                 list.add(i);
                 set.add(i);
-                backtrack(nums,list);
+                backtrack(nums, list);
                 list.remove(Integer.valueOf(i));
                 set.remove(i);
             }

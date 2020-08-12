@@ -43,18 +43,20 @@ public class Leetcode110 {
             return Math.max(maxDepth(root.left),maxDepth(root.right))+1;
         }
     }*/
-    public boolean flag=true;
-    public boolean isBalanced(TreeNode root){
+    public boolean flag = true;
+
+    public boolean isBalanced(TreeNode root) {
         MaxDepth(root);
         return flag;
     }
-    public int MaxDepth(TreeNode root){
-        if(root==null){
+
+    public int MaxDepth(TreeNode root) {
+        if (root == null) {
             return 0;
         }
-        int l=MaxDepth(root.left);
-        int r=MaxDepth(root.right);
-        if(Math.abs(l-r)>1) flag=false;
-        return Math.max(l,r)+1;
+        int l = MaxDepth(root.left);
+        int r = MaxDepth(root.right);
+        if (Math.abs(l - r) > 1) flag = false;
+        return Math.max(l, r) + 1;
     }
 }

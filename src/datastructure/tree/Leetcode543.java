@@ -6,19 +6,21 @@ package datastructure.tree;
  * @Description:
  */
 public class Leetcode543 {
-    public int result=0;
+    public int result = 0;
+
     public int diameterOfBinaryTree(TreeNode root) {
         maxDepth(root);
         return result;
     }
-    public int maxDepth(TreeNode root){
-        if(root==null){
+
+    public int maxDepth(TreeNode root) {
+        if (root == null) {
             return 0;
-        }else{
-            int l=maxDepth(root.left);
-            int r=maxDepth(root.right);
-            if(l+r>result) result=l+r;
-            return Math.max(l,r)+1;
+        } else {
+            int l = maxDepth(root.left);
+            int r = maxDepth(root.right);
+            if (l + r > result) result = l + r;
+            return Math.max(l, r) + 1;
         }
     }
 }

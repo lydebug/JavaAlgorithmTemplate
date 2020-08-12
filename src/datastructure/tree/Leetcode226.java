@@ -7,13 +7,13 @@ package datastructure.tree;
  */
 public class Leetcode226 {
     public TreeNode invertTree(TreeNode root) {
-        if (root==null){
+        if (root == null) {
             return null;
         }
         TreeNode l = root.left;
         TreeNode r = root.right;
-        root.left=r;
-        root.right=l;
+        root.left = r;
+        root.right = l;
         invertTree(l);
         invertTree(r);
         return root;

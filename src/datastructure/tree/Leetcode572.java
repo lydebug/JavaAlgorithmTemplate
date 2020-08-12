@@ -7,29 +7,30 @@ package datastructure.tree;
  */
 public class Leetcode572 {
     public boolean isSubtree(TreeNode s, TreeNode t) {
-        if(t==null){
+        if (t == null) {
             return true;
         }
-        if(s==null){
+        if (s == null) {
             return false;
         }
-        if(check(s,t)){
+        if (check(s, t)) {
             return true;
-        }else{
-            return isSubtree(s.left,t)||isSubtree(s.right,t);
+        } else {
+            return isSubtree(s.left, t) || isSubtree(s.right, t);
 
         }
     }
-    public boolean check(TreeNode s,TreeNode t){
-        if(s==null&&t==null){
+
+    public boolean check(TreeNode s, TreeNode t) {
+        if (s == null && t == null) {
             return true;
-        }else if(s!=null&&t!=null){
-            if(s.val==t.val){
-                return check(s.left,t.left)&&check(s.right,t.right);
-            }else{
+        } else if (s != null && t != null) {
+            if (s.val == t.val) {
+                return check(s.left, t.left) && check(s.right, t.right);
+            } else {
                 return false;
             }
-        }else{
+        } else {
             return false;
         }
     }

@@ -9,33 +9,36 @@ import java.util.Arrays;
  */
 public class Leetcode733 {
     public static void main(String[] args) {
-        int[][] img={{1,1,1},{1,1,0},{1,0,1}};
-        int sr=1,sc=1,newColor=2;
+        int[][] img = {{1, 1, 1}, {1, 1, 0}, {1, 0, 1}};
+        int sr = 1, sc = 1, newColor = 2;
         Leetcode733 A = new Leetcode733();
-        int[][] image=A.floodFill(img,sr,sc,newColor);
-        for(int i=0;i<image.length;i++){
+        int[][] image = A.floodFill(img, sr, sc, newColor);
+        for (int i = 0; i < image.length; i++) {
             System.out.println(Arrays.toString(image[i]));
         }
 
     }
+
     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
-        int oldColor=image[sr][sc];
-        boolean[][] f =new boolean[image.length][image[0].length];
-        dfs(image,sr,sc,oldColor,newColor,f);
+        int oldColor = image[sr][sc];
+        boolean[][] f = new boolean[image.length][image[0].length];
+        dfs(image, sr, sc, oldColor, newColor, f);
         return image;
     }
-    public void dfs(int[][] img,int sr,int sc,int oldColor,int color,boolean[][] f){
-        if(isValid(img,sr,sc,oldColor,f)){
-            img[sr][sc]=color;
-            f[sr][sc]=true;
-            dfs(img,sr+1,sc,oldColor,color,f);
-            dfs(img,sr,sc+1,oldColor,color,f);
-            dfs(img,sr-1,sc,oldColor,color,f);
-            dfs(img,sr,sc-1,oldColor,color,f);
+
+    public void dfs(int[][] img, int sr, int sc, int oldColor, int color, boolean[][] f) {
+        if (isValid(img, sr, sc, oldColor, f)) {
+            img[sr][sc] = color;
+            f[sr][sc] = true;
+            dfs(img, sr + 1, sc, oldColor, color, f);
+            dfs(img, sr, sc + 1, oldColor, color, f);
+            dfs(img, sr - 1, sc, oldColor, color, f);
+            dfs(img, sr, sc - 1, oldColor, color, f);
         }
     }
-    public boolean isValid(int[][] img,int sr,int sc,int oldColor,boolean[][] f){
-        if(sr>=0&&sr<img.length&&sc>=0&&sc<img[0].length&&img[sr][sc]==oldColor&&!f[sr][sc]){
+
+    public boolean isValid(int[][] img, int sr, int sc, int oldColor, boolean[][] f) {
+        if (sr >= 0 && sr < img.length && sc >= 0 && sc < img[0].length && img[sr][sc] == oldColor && !f[sr][sc]) {
             return true;
         }
         return false;

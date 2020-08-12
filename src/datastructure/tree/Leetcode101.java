@@ -7,22 +7,23 @@ package datastructure.tree;
  */
 public class Leetcode101 {
     public boolean isSymmetric(TreeNode root) {
-        if(root==null){
+        if (root == null) {
             return true;
-        }else{
-            return check(root.left,root.right);
+        } else {
+            return check(root.left, root.right);
         }
     }
-    public boolean check(TreeNode s,TreeNode t){
-        if(s==null&&t==null){
+
+    public boolean check(TreeNode s, TreeNode t) {
+        if (s == null && t == null) {
             return true;
-        }else if(s!=null&&t!=null){
-            if(s.val==t.val){
-                return check(s.left,t.right)&&check(s.right,t.left);
-            }else{
+        } else if (s != null && t != null) {
+            if (s.val == t.val) {
+                return check(s.left, t.right) && check(s.right, t.left);
+            } else {
                 return false;
             }
-        }else{
+        } else {
             return false;
         }
     }

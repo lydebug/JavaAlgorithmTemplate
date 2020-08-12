@@ -27,7 +27,7 @@ public class Leetcode76 {
         Map<Character, Integer> mapT = new HashMap<>();
         for (int i = 0; i < t.length(); i++) {
             Character c = t.charAt(i);
-            map.put(c,0);
+            map.put(c, 0);
             if (mapT.containsKey(c)) {
                 mapT.put(c, mapT.get(c) + 1);
             } else {
@@ -40,20 +40,20 @@ public class Leetcode76 {
                 if (map.isEmpty()) {
                     l = r;
                 }
-                if(map.containsKey(c)){
-                    map.put(c, map.get(c)+1);
+                if (map.containsKey(c)) {
+                    map.put(c, map.get(c) + 1);
                 }
                 if (isValid(mapT, map)) {
                     //changeLeft
                     Character c2;
                     while (l <= r && isValid(mapT, map)) {
                         c2 = s.charAt(l);
-                        if(map.containsKey(c2)){
-                            map.put(c2,map.get(c2)-1);
+                        if (map.containsKey(c2)) {
+                            map.put(c2, map.get(c2) - 1);
                         }
                         l++;
                     }
-                    int start=l-1;
+                    int start = l - 1;
                     if (r - start + 1 < len) {
                         len = r - start + 1;
                         res = s.substring(start, r + 1);
@@ -68,7 +68,7 @@ public class Leetcode76 {
 
     public boolean isValid(Map<Character, Integer> A, Map<Character, Integer> B) {
         for (Character c : A.keySet()) {
-            if (A.get(c)>(B.get(c))) {
+            if (A.get(c) > (B.get(c))) {
                 return false;
             }
         }

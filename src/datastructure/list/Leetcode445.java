@@ -5,8 +5,7 @@ import java.util.Stack;
 /**
  * @Author: liyang27
  * @Date: 2020/7/14 20:22
- * @Description:
- * Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
+ * @Description: Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
  * Output: 7 -> 8 -> 0 -> 7
  */
 public class Leetcode445 {
