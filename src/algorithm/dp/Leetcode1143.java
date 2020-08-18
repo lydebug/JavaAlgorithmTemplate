@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @Author: liyang27
  * @Date: 2020/8/15 19:13
- * @Description:
+ * @Description:最长公共子串
  */
 public class Leetcode1143 {
     public static void main(String[] args) {
